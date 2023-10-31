@@ -1,0 +1,13 @@
+.cards{
+    display: flex;
+    padding: 1vw 3vw;
+    border: 2px solid teal;
+    margin: 5vw 10vw;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 3px;
+}
+.column{
+    display: flex;
+    flex: auto;
+}
