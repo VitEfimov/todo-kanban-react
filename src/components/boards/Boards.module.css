@@ -2,7 +2,7 @@
 .boardsList{
     padding: 50px;
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: auto auto auto ;
     gap: 10%;
     background-color: #042b4a;
     justify-content: center;
@@ -13,5 +13,7 @@ border: 1px solid wheat;
 border-radius: 5px;
 padding: 5px;
 min-width: 200px;
+min-height: 200px;
+height: fit-content;
 
 }

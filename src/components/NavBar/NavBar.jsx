@@ -17,13 +17,13 @@ const NavBar = () => {
 // `${'.navBar'}+${'.navBarElements'}`
   return (
     <div className={classes.navBar}>
-      <div className={classes.navBarElements} >
+
       <a href='../pages/Home'>Home</a>
       <a href=''>Board</a>
       <a href=''>Archive</a>
       <a href='./pages/About'>About</a>
-    </div>
-      <MyButton>LogOut</MyButton>
+
+      <MyButton style={{width:'100%',borderRadius: 'none'}}>LogOut</MyButton>
     </div>
   )
 }

@@ -1,4 +1,5 @@
 .navBar {
+    padding-top: 10%;
     height: 100%;
     width: 15%;
     position: fixed;
@@ -8,32 +9,15 @@
     background-color: #232323;
     transition: .5s ease;
     overflow-x: hidden;
-    padding-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: wheat;
 }
 
-.navBarElements {
-    margin-top: 10%;
-    height: 100%;
-    width: 15%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #232323;
-    transition: .5s ease;
-    overflow-x: hidden;
-    padding-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: wheat;
-}
 
 a {
+    /* margin-top: 100px; */
     margin: 1vh;
     color: wheat;
     padding: 1vh;
