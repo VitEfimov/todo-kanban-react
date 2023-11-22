@@ -1,0 +1,21 @@
+/* .header{
+    display: flex;
+    flex: grid;
+    padding: 2vw 5vw;
+    border: 2px solid teal;
+    margin: 5vw 10vw;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 3px;
+} */
+
+.header{
+user-select: none;
+-moz-user-select: none;
+-webkit-user-select: none;
+-ms-user-select: none;
+font-size: 1.2em;
+margin-bottom: 0.5em;
+font-weight: bold;
+cursor:auto;
+}

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import classes from '../components/KanbanBoard.module.css'
+// import classes from '../components/KanbanBoard.module.css'
 
 function KanbanBoard() {
 
@@ -30,48 +30,47 @@ function KanbanBoard() {
   };
 
   return (
-    <div className="App">
-      <h1>Kanban Board</h1>
-      <div className={classes.cards}>
+    <div className="board">
+      <div className="">
         <div className="column">
-          <h2>ToDo</h2>
             {tasks.todo.map((task, index) => (
-              <p key={index} onClick={() => handleMoveTask(task, 'todo', 'inProgress')}>
+              <div className='board-item'>
+              <p className='board-item-content' key={index} onClick={() => handleMoveTask(task, 'todo', 'inProgress')}>
                 {task}
-              </p>
+              </p></div>
             ))}
         </div>
         <div className="column">
-          <h2>In Progress</h2>
             {tasks.inProgress.map((task, index) => (
-              <p key={index} onClick={() => handleMoveTask(task, 'inProgress', 'review')}>
+               <div className='board-item'>
+               <p className='board-item-content' key={index} onClick={() => handleMoveTask(task, 'inProgress', 'review')}>
                 {task}
-              </p>
+                </p></div>
             ))}
         </div>
         <div className="column">
-          <h2>Review</h2>
             {tasks.review.map((task, index) => (
-              <p key={index} onClick={() => handleMoveTask(task, 'review', 'done')}>
+               <div className='board-item'>
+               <p className='board-item-content' key={index} onClick={() => handleMoveTask(task, 'review', 'done')}>
                 {task}
-              </p>
+                </p></div>
             ))}
         </div>
         <div className="column">
-          <h2>Done</h2>
             {tasks.done.map((task, index) => (
               <p key={index} >{task}</p>
             ))}
         </div>
       </div>
       <div className="add-task">
-        <input
+        <input style={{borderRadius:'3px'}}
           type="text"
           placeholder="Add a task"
           value={newTask}
           onChange={(e) => setNewTask(e.target.value)}
-        />
-        <button onClick={handleAddTask}>Add</button>
+          
+        /><br/>
+        <button style={{borderRadius:'3px'}} onClick={handleAddTask}>Add</button>
       </div>
     </div>
   
