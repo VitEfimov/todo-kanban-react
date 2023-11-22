@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import classes from '../newKanban/KanbanBoardNew.module.css'
 import MyButton from '../buttons/MyButton';
 
+import MyModal from '../modal/MyModal';
+import AddNewItemForm from '../AddNewItemForm';
+
+
 
 function Test() {
 
@@ -11,8 +15,16 @@ function Test() {
         { id: 3, title: "Done", items: [{ id: 1, title: "Finded job" }, { id: 2, title: "went in market" }, { id: 3, title: "done Trash" }] },
     ])
 
+
+    
     const [currentBoard, setCurrentBoard] = useState(null);
     const [currentItem, setCurrentItem] = useState(null);
+    const [modal, setModal] = useState(false);
+const [items,setItems] = useState([boards.items])
+const createItem = (newItem) => {
+    setCurrentBoard([...items,newItem])
+    setModal(false);
+}
 
 
     function dragStartHandler(e, board, item) {
@@ -52,26 +64,30 @@ function Test() {
         setCurrentBoard(currentBoard)
         setBoards((prevBoards) => {
             return prevBoards.map((p) => {
-              
+
+
                 if (p.id === currentBoard.id) {
-                    return {...p,currentBoard};
+                    return { ...p, currentBoard };
                 }
                 if (p.id === board.id) {
-                   return {...p,board};
-                            }
+                    return { ...p, board };
+                }
+
                 return p;
             });
         });
 
 
 
-        
+
+
         // e.target.style.background = '#282c33'
         e.target.style.boxShadow = 'none'
-            // }
+        // }
     }
 
-    function dropCardHandler(e, board,item) {
+    function dropCardHandler(e, board, item) {
+
         if (currentBoard !== board) {
 
             board.items.push(currentItem)
@@ -81,14 +97,16 @@ function Test() {
 
             const currentIndex = currentBoard.items.indexOf(currentItem)
             currentBoard.items.splice(currentIndex, 1)
-            
+
+
             setBoards((prevBoards) => {
                 return prevBoards.map((p) => {
                     if (p.id === board.id) {
-                        return {...p, board};
+                        return { ...p, board };
                     }
                     if (p.id === currentBoard.id) {
-                        return {...p, currentBoard};
+                        return { ...p, currentBoard };
+
                     }
                     return p;
                 });
@@ -101,41 +119,40 @@ function Test() {
     }
 
 
-    // const sortCards = (a,b) => {
-    //     if (a.order > b.order) {
-    //         return 1;
-    //     } else {
-    //         return -1;
-    //     }
-    // }
 
     return (
-        <div className={classes.cards}>
-            {boards.map((board,item) => 
-                <div
-                    key={board.id}
-                    className={classes.board}
-                    onDragOver={(e) => dragOverHandler(e)}
-                    onDrop={(e) => dropCardHandler(e, board,item)}
-                >
-                    <div className={classes.board_title}>
-                        {board.title}
-                    </div>
-                    {board.items.map((item,index) =>
-                        <div
-                            key={index}
-                            className={classes.item}
-                            onDragStart={(e) => dragStartHandler(e, board, item)}
-                            onDragLeave={(e) => dragleaveHandler(e)}
-                            onDragEnd={(e) => dragEndHandler(e)}
-                            onDragOver={(e) => dragOverHandler(e)}
-                            onDrop={(e) => dropHandler(e, board, item)}
-                            draggable={true}
-                        >
-                            {item.title}
-                        </div>)}
-                    <MyButton onClick={(e)=>alert("Button is work")}>Add a card </MyButton>
-                </div>)}
+        <div className={classes.board}>
+            <div className={classes.cards}>
+                {boards.map((board, item) =>
+                    <div
+                        key={board.id}
+                        className={classes.board}
+                        onDragOver={(e) => dragOverHandler(e)}
+                        onDrop={(e) => dropCardHandler(e, board, item)}
+                    >
+                        <div className={classes.board_title}>
+                            {board.title}
+                        </div>
+                        {board.items.map((item, index) =>
+                            <div
+                                key={index}
+                                className={classes.item}
+                                onDragStart={(e) => dragStartHandler(e, board, item)}
+                                onDragLeave={(e) => dragleaveHandler(e)}
+                                onDragEnd={(e) => dragEndHandler(e)}
+                                onDragOver={(e) => dragOverHandler(e)}
+                                onDrop={(e) => dropHandler(e, board, item)}
+                                draggable={true}
+                            >
+                                {item.title}
+                            </div>)}
+                        <MyButton onClick={() => setModal(true)}>Add a card </MyButton>
+                        <MyModal visible={modal} setVisible={setModal}>
+<AddNewItemForm create={createItem}/>
+                        </MyModal>
+                    </div>)}
+            </div>
+
         </div>
     )
 }

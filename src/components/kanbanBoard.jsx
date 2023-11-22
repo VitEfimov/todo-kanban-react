@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 // import classes from '../components/KanbanBoard.module.css'
 
-function KanbanBoard() {
+function KanbanBoard111() {
 
     const [tasks, setTasks] = useState({
     todo: [],
@@ -78,4 +78,4 @@ function KanbanBoard() {
     )
 }
 
-export default KanbanBoard;
+export default KanbanBoard111;

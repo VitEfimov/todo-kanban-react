@@ -1,18 +1,37 @@
-// import KanbanBoard from './components/kanbanBoard';
 
+
+// import { BrowserRouter } from 'react-router-dom';
 
 import './App.css';
-import Header from './components/Header';
-import Test from './components/Test/Test';
-// import KanbanBoardNew from './components/newKanban/KanbanBoardNew';
 
+import NavBar from './components/NavBar/NavBar';
+import Test from './components/Test/Test';
+import Boards from './components/boards/Boards';
+import MyButton from './components/buttons/MyButton';
+import KanbanBoardNew from './components/newKanban/KanbanBoardNew';
+
+
+import React, { useEffect, useState } from "react";
+import { BrowserRouter } from 'react-router-dom';
 function App() {
+
+
+
   return (
     <div className="App">
-      <h1>Kanban Board App</h1>
+
+      {/* <h1>Kanban Board App</h1> */}
+
+      <BrowserRouter>
+              <NavBar />
+        {/* <AppRouter /> */}
+      </BrowserRouter>
       {/* <Header/> */}
-      {/* <KanbanBoardNew /> Include the Kanban board component */}
-      <Test/>
+      {/* <KanbanBoardNew /> */}
+      <Boards/>
+      {/* <Test/> */}
+
+
     </div>
   );
 }
