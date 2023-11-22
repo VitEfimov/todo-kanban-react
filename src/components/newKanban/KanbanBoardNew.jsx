@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import classes from '../newKanban/KanbanBoardNew.module.css'
+
 import MyButton from '../buttons/MyButton';
+
 
 
 function KanbanBoardNew() {
@@ -59,7 +61,9 @@ function KanbanBoardNew() {
                 className={classes.card}>
                     {card.text}
                 </div>)}
+
                 <button>Add new list</button>
+
         </div>
     )
 }

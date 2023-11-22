@@ -1,4 +1,4 @@
-.cards{
+/* .header{
     display: flex;
     flex: grid;
     padding: 2vw 5vw;
@@ -7,9 +7,15 @@
     justify-content: space-between;
     align-items: center;
     border-radius: 3px;
-}
-.column{
-    display: flex;
-    flex: auto;
-    width: 10%;
+} */
 
+.header{
+user-select: none;
+-moz-user-select: none;
+-webkit-user-select: none;
+-ms-user-select: none;
+font-size: 1.2em;
+margin-bottom: 0.5em;
+font-weight: bold;
+cursor:auto;
+}

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import classes from '../newKanban/KanbanBoardNew.module.css'
 import MyButton from '../buttons/MyButton';
+
 import MyModal from '../modal/MyModal';
 import AddNewItemForm from '../AddNewItemForm';
+
 
 
 function Test() {
@@ -13,6 +15,7 @@ function Test() {
         { id: 3, title: "Done", items: [{ id: 1, title: "Finded job" }, { id: 2, title: "went in market" }, { id: 3, title: "done Trash" }] },
     ])
 
+
     
     const [currentBoard, setCurrentBoard] = useState(null);
     const [currentItem, setCurrentItem] = useState(null);
@@ -22,6 +25,7 @@ const createItem = (newItem) => {
     setCurrentBoard([...items,newItem])
     setModal(false);
 }
+
 
     function dragStartHandler(e, board, item) {
         setCurrentBoard(board)
@@ -61,15 +65,18 @@ const createItem = (newItem) => {
         setBoards((prevBoards) => {
             return prevBoards.map((p) => {
 
+
                 if (p.id === currentBoard.id) {
                     return { ...p, currentBoard };
                 }
                 if (p.id === board.id) {
                     return { ...p, board };
                 }
+
                 return p;
             });
         });
+
 
 
 
@@ -80,6 +87,7 @@ const createItem = (newItem) => {
     }
 
     function dropCardHandler(e, board, item) {
+
         if (currentBoard !== board) {
 
             board.items.push(currentItem)
@@ -90,6 +98,7 @@ const createItem = (newItem) => {
             const currentIndex = currentBoard.items.indexOf(currentItem)
             currentBoard.items.splice(currentIndex, 1)
 
+
             setBoards((prevBoards) => {
                 return prevBoards.map((p) => {
                     if (p.id === board.id) {
@@ -97,6 +106,7 @@ const createItem = (newItem) => {
                     }
                     if (p.id === currentBoard.id) {
                         return { ...p, currentBoard };
+
                     }
                     return p;
                 });
@@ -107,6 +117,7 @@ const createItem = (newItem) => {
         e.target.style.boxShadow = 'none'
         // e.target.style.background = '#282c33'
     }
+
 
 
     return (
@@ -141,6 +152,7 @@ const createItem = (newItem) => {
                         </MyModal>
                     </div>)}
             </div>
+
         </div>
     )
 }
