@@ -1,6 +1,7 @@
 .cards{
     display: flex;
-    padding: 1vw 3vw;
+    flex: grid;
+    padding: 2vw 5vw;
     border: 2px solid teal;
     margin: 5vw 10vw;
     justify-content: space-between;
@@ -10,4 +11,9 @@
 .column{
     display: flex;
     flex: auto;
+    width: 10%;
+    /* font-size: 3vw; */
+    
 }
+
+
