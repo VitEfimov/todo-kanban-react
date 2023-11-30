@@ -1,69 +1,33 @@
-
-.cardsList{
-    margin-left: 10%;
-    padding: 50px;
-    display: flex;
-    grid-template-columns: auto auto auto ;
-    gap: 10%;
-    background-color: #042b4a;
-    justify-content: center;
-}
-
-.card{
-display: flex;
-flex-direction: column;
-align-self: baseline;
-min-width: 200px;
-width: 100%;
-height: inherit;
-background-color: rgba(0, 0, 0, .5);
-margin: 0 15px;
-padding: 10px;
-transition: .3s all ease;
+.card {
+    /* border: 1px solid wheat;
 border-radius: 5px;
+padding: 5px;
+min-width: 200px;
+min-height: 200px;
+height: fit-content; */
+    display: flex;
+    flex-direction: column;
+    align-self: baseline;
+    min-width: 200px;
+    width: 100%;
+    height: inherit;
+    background-color: rgba(0, 0, 0, .5);
+    margin: 0 15px;
+    padding: 10px;
+    transition: .3s all ease;
+    border-radius: 5px;
 }
 
-
+/* @media screen {
+    .boardsList{
+    display: flex;
+    flex-direction: column;
+}
+} */
 
 .card_item {
     display: flex;
-    flex-direction: column;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    align-self: baseline;
-    max-width: 250px;
-    width: 100%;
-    background-color: rgba(155, 155, 155, .5);
-    margin-bottom: 5px;
-    padding: 10px;
-    transition: .3s all ease;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    position: relative; /* Added for positioning */
-  }
-  
-  .card_item .button-container {
-    /* position: absolute; */
-    bottom: 5px; /* Adjust as needed */
-    right: 10px; /* Adjust as needed */
-  }
-  
-  .card_item .button-container button {
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-
-
-/* .card_item {
-    display: flex;
-    flex-direction: column;
-    
-    row-gap:50%;
-    flex-wrap: wrap;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+    /* flex-direction: column; */
     align-self: baseline;
     max-width: 250px;
     width: 100%;
@@ -75,16 +39,9 @@ border-radius: 5px;
     border: none;
     cursor: pointer;
 }
-.card_item.myButton{
+.cardItem.myButton{
     display: flex;
-    justify-content:right;
- 
-    background: none;
-    position: absolute;
-    bottom: 50px;
-    right: 1cqi;
-    transform: translate(-50%);  
-} */
+}
 
 .title {
     padding: 5px;
@@ -121,6 +78,7 @@ border-radius: 5px;
     /* display: none; */
 
 }
+
 .form.active {
     border-radius: 5px;
     margin-top: auto;
@@ -128,24 +86,26 @@ border-radius: 5px;
 
 }
 
-.inputArea {
-    background-color: white;
-    min-width: 100px;
-    min-height: 50px;
-    border: none;
-    border-radius: 5px;
-    outline: none;
+.textarea {
     resize: none;
-    font-size: 3svh;
-    padding:0 5px;
+    height: 60px;
+    border-radius: 5px;
+    border: none;
+    background: white;
+    padding: 10px;
+    width: 100%;
+    outline: none;
+
 }
 
 .boardBtn {
     display: flex;
 }
+
 .add_item_btn {
-/* display: none; */
+    /* display: none; */
 }
+
 .add_item_btn {
     background: teal;
     border: none;
@@ -190,24 +150,4 @@ border-radius: 5px;
     padding-left: 5px;
     opacity: 75%;
     cursor: pointer;
-}
-.add_board_button{
-    background-color: white;
-
-}
-.add_board_button,.myButton{
-    height: 50px;
-    display: flex;
-    justify-content:right;
- 
-    background: none;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100px;
-    font-weight: 600;
-    position: absolute;
-    bottom: 50px;
-    right: 1cqi;
-    transform: translate(-50%);  
 }

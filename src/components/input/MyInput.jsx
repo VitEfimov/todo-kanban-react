@@ -1,25 +1,39 @@
 import React, { useState } from 'react'
 import classes from './MyInput.module.css'
-import MyButton from '../buttons/MyButton'
+// import MyButton from '../buttons/MyButton'
 
-const MyInput = ({props,boards}) => {
-const [title,setTitle] = useState('');
-const newBoard = {
-  id: 9,
-  title: title
-}
-props.board(...boards,newBoard);
+const MyInput = ({ props, boards, setBoards}) => {
+  const [input, setInput] = useState('');
+  // const [visible,setVisible] = useState(true)
+
+//   const visible = changeListVisible();
+
+
+// //   const handleAddCard = () => {
+// //     const newBoard = { id: boards.length + 1, title: input };
+// //     setBoards([...boards, newBoard]);
+// //     setInput('');
+// //     changeListVisible();
+
+// // };
+  const handleInputChange = (e) => {
+    setInput(e.target.value);
+  };
+
+//   // const handleVisible = () => {
+//   //   setVisible(false)
+//   // }
 
   return (
-    <div className={classes.inputDiv}>
-      add new list
-    <input
-    className={classes.myInput}
-    {...props}
-    value={title}
-    onChange={(e)=> setTitle(e.target.value)}
-    />
-    <MyButton>add new list</MyButton>
+    <div className={classes.myInput}>
+      <textarea
+        className={classes.inputArea}
+        placeholder="input card name"
+        value={input}
+        onChange={handleInputChange}
+      ></textarea>
+
+     
     </div>
   )
 }

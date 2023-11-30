@@ -19,7 +19,7 @@ const NavBar = () => {
     <div className={classes.navBar}>
 
       <a href='../pages/Home'>Home</a>
-      <a href=''>Board</a>
+      <a href='../pages/Boards'>Board</a>
       <a href=''>Archive</a>
       <a href='./pages/About'>About</a>
 

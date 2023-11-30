@@ -5,10 +5,10 @@
 import './App.css';
 
 import NavBar from './components/NavBar/NavBar';
-import Test from './components/Test/Test';
-import Boards from './components/boards/Boards';
+
+import Boards3 from './components/boards/Boards3';
 import MyButton from './components/buttons/MyButton';
-import KanbanBoardNew from './components/newKanban/KanbanBoardNew';
+
 
 
 import React, { useEffect, useState } from "react";
@@ -20,15 +20,15 @@ function App() {
   return (
     <div className="App">
 
-      {/* <h1>Kanban Board App</h1> */}
+
 
       <BrowserRouter>
               <NavBar />
         {/* <AppRouter /> */}
       </BrowserRouter>
-      {/* <Header/> */}
-      {/* <KanbanBoardNew /> */}
-      <Boards/>
+
+      <Boards3/>
+
       {/* <Test/> */}
 
 

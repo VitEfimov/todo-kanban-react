@@ -15,14 +15,18 @@
     color: wheat;
 }
 
-
+a:hover{
+    background: teal;
+    color: white;
+}
 a {
     /* margin-top: 100px; */
     margin: 1vh;
     color: wheat;
-    padding: 1vh;
+    padding: 1svh;
     width: 100%;
-    border: 0.5px solid wheat;
+    border: none;
     text-align: center;
     text-decoration: none;
+    /* border-radius: 5px; */
 }

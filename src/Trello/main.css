@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    padding: 50px 0;
+    background: url('./milky-way-2695569_1280.jpg') center / cover no-repeat;
+
+}
+
+.boards {
+    display: flex;
+    width: 100%;
+
+}
+
+.boards_item {
+    display: flex;
+    flex-direction: column;
+    align-self: baseline;
+    max-width: 250px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    margin: 0 15px;
+    padding: 10px;
+    transition: .3s all ease;
+    border-radius: 5px;
+    /* position: relative; */
+}
+
+.title {
+    padding: 5px;
+    color: white;
+}
+
+.title:focus {
+    outline: 1px solid rgba(168, 168, 168, .45);
+
+}
+
+.list {
+    min-height: 40px;
+}
+
+.list_item {
+    background-color: #fefefe;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    margin: 5px 0;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    outline: none;
+    border: none;
+
+
+}
+
+.form {
+    border-radius: 5px;
+    margin-top: auto;
+    display: none;
+
+}
+
+.textarea {
+    resize: none;
+    height: 60px;
+    border-radius: 5px;
+    border: none;
+    background: white;
+    padding: 10px;
+    width: 100%;
+    outline: none;
+
+}
+
+.buttons {
+    display: flex;
+}
+
+.add_item-btn {
+    background: teal;
+    border: none;
+    height: 35px;
+    cursor: pointer;
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 5px; */
+    margin-right: 10px;
+    width: 100%;
+}
+
+.cancel_item-btn {
+    padding: 0 10px;
+    background: chocolate;
+    border: none;
+    height: 35px;
+    cursor: pointer;
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 5px; */
+    margin-left: auto;
+    /* width: 75%; */
+    flex-shrink: 0;
+}
+
+.add_btn {
+    height: 30px;
+    background: white;
+    border-radius: 5px;
+    border: none;
+    margin-top: 5px;
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    padding-left: 5px;
+    opacity: 75%;
+    cursor: pointer;
+}
+
+span {
+    font-size: 20px;
+    margin-left: 5px;
+    padding-right: 10px;
+    font-weight: 500;
+}
+
+.add_board_btn {
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 150px;
+    font-weight: 600;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translate(-50%);
+    opacity: 80%;
+}
