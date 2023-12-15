@@ -3,11 +3,11 @@
 box-sizing: border-box;
 }
 
-:root {
-  --item-width: 188px;
+/* :root { */
+  /* --item-width: 188px;
   --item-height: 35px;
   --column-width: 200px;
-}
+} */
 
 body {
   padding: 30px;

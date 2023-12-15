@@ -1,7 +1,8 @@
 .navBar {
     padding-top: 10%;
     height: 100%;
-    width: 15%;
+    width: 10vw;
+    min-width: fit-content;
     position: fixed;
     z-index: 1;
     top: 0;

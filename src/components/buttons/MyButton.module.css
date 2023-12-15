@@ -1,13 +1,8 @@
 
-/* .myBtn {
-background-color: red;
-width: 100px;
-height: 100px;
-color: beige;} */
 
 .myBtn {
     appearance: none;
-    background-color: transparent;/*transparent*/
+    background-color: transparent;
     border: none;
     border-radius: 15px;
     box-sizing: border-box;
@@ -33,15 +28,17 @@ color: beige;} */
     touch-action: manipulation;
     width: 15%;
     will-change: transform;
+    z-index: 0;
 }
 
 .myBtn:disabled {
     pointer-events: none;
+    background-color: grey;
 }
 
 .myBtn:hover {
     color: #fff;
-    background-color: teal;
+    /* background-color: teal; */
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
     transform: translateY(-2px);
 }
