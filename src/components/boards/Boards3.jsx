@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import classes from './Boards.module.css'
 import MyButton from '../buttons/MyButton';
-import ListForBoard from '../card/ListForBoard';
+import List from '../card/List';
+
 // import { useLocalStorage } from '../../hooks/localStorageHook';
 // import List from '../card/List';
 
@@ -11,6 +12,7 @@ const Boards3 = () => {
     const [lists, setLists] = useState(JSON.parse(localStorage.getItem("lists")) || []);
  ;
  const [value, setValue] = useState('');
+ const [addBtnDisabled, setAddBtnDisabled] = useState(true)
 
     const [input, setInput] = useState('');
     const [listVisible, setListVisible] = useState(false);
@@ -37,12 +39,19 @@ const Boards3 = () => {
     const handleInputListChange = (e) => {
         setInput(e.target.value);
     };
+// const [btnVisible,setBtnVisible] = useState(true)
+// const handleBtnVisible = () => {
+//     if (modalVisible) {
+//         setBtnVisible(false)
+//     }
+// }
+
 
     return (
-        <div className={classes.cardsList} draggable={true}>
+        <div className={classes.cardsList} >
 
             {lists.map(list => (
-                <ListForBoard
+                <List
                 key={list.id}
                 list={list}
                 lists={lists}
@@ -50,6 +59,9 @@ const Boards3 = () => {
                 listId={list.id}
                 input={input}
                 setInput={setInput}
+                draggable={true}
+                setAddBtnDisabled={setAddBtnDisabled}
+                // modalVisible={modalVisible} setModalVisible={setModalVisible}
                 />
 
             ))}
@@ -69,7 +81,11 @@ const Boards3 = () => {
                 :
                 null}
             <div className={classes.add_board_button}>
-                <MyButton onClick={changeListAddVisible}>Add new list</MyButton>
+                <MyButton
+                //  onChange={(e)=>modalVisible?e.target.style.display='none':null}
+                
+                // disabled={setAddBtnDisabled}
+                onClick={changeListAddVisible}>Add new list</MyButton>
 
             </div>
         </div>

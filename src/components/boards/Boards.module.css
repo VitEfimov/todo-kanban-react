@@ -5,15 +5,22 @@
     display: flex;
     grid-template-columns: auto auto auto ;
     gap: 10%;
-    background-color: #042b4a;
+    /* background-color: #042b4a; */
     justify-content: center;
+    align-items: center;
+    max-width: 10vw;
+    
 }
 
 .card{
 display: flex;
+position:sticky;
 flex-direction: column;
 align-self: baseline;
-min-width: 200px;
+/* align-items: center; */
+/* min-width: 200px; */
+max-width: 3vw;
+min-width: 250px;
 width: 100%;
 height: inherit;
 background-color: rgba(0, 0, 0, .5);
@@ -22,75 +29,122 @@ padding: 10px;
 transition: .3s all ease;
 border-radius: 5px;
 }
+.cardBox{
+display: flex;
+/* min-width: 28vw; */
+max-width: 100%;
+/* flex-direction: colurowmn; */
+
+}
+
+.titleContainer{
+
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+}
 
 
 
 .card_item {
     display: flex;
-    flex-direction: column;
+    flex-direction:column;
+font-size: 1.5cqmax;
+    justify-content: space-between;
     word-wrap: break-word;
-    overflow-wrap: break-word;
+    /* overflow:hidden; */
+    overflow-wrap:break-word;
     align-self: baseline;
-    max-width: 250px;
-    width: 100%;
+    /* max-width: 250px; */
+    width: 90%;
     background-color: rgba(155, 155, 155, .5);
-    margin-bottom: 5px;
-    padding: 10px;
+    margin-bottom: 1vh;
+    padding: 0 1vw;
     transition: .3s all ease;
-    border-radius: 5px;
+    border-radius: 5px 0 0 5px;
     border: none;
     cursor: pointer;
     position: relative; /* Added for positioning */
+
+
+  overflow: hidden;
+  padding-right: 1rem;
+
+  content: "...";
+  bottom: 0;
+  right: 0;
+
+   --max-lines: 1;
+    --line-height: 1.9;
+    height: calc(var(--max-lines) * 1em * var(--line-height));
+    line-height: var(--line-height);
+    overflow: hidden;
+
+
   }
+
+
   
-  .card_item .button-container {
+
+.buttonContainer{
+display: flex;
+    width: fit-content;
+    /* background-color: rgba(155, 155, 155, .5);
+     */
+     background-color: black;
+    margin-bottom: 1vh;
+    border-radius: 0 5px 5px 0;
+    justify-content: center;
+    align-items: center;
+    /* padding: 1vw; */
+
     /* position: absolute; */
-    bottom: 5px; /* Adjust as needed */
-    right: 10px; /* Adjust as needed */
-  }
-  
-  .card_item .button-container button {
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
+
+}
+.buttonContainer .myButton:hover{
+    background-color: none;
+}
 
 
-/* .card_item {
-    display: flex;
-    flex-direction: column;
-    
-    row-gap:50%;
-    flex-wrap: wrap;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    align-self: baseline;
-    max-width: 250px;
-    width: 100%;
-    background-color: rgba(155, 155, 155, .5);
-    margin-bottom: 5px;
-    padding: 10px;
-    transition: .3s all ease;
+
+
+.textarea {
+    resize: none;
+    height: 60px;
     border-radius: 5px;
     border: none;
-    cursor: pointer;
+    background: white;
+    padding: 10px;
+    width: 100%;
+    outline: none;
+
 }
-.card_item.myButton{
-    display: flex;
-    justify-content:right;
- 
-    background: none;
-    position: absolute;
-    bottom: 50px;
-    right: 1cqi;
-    transform: translate(-50%);  
-} */
+
 
 .title {
     padding: 5px;
     color: white;
+    position: relative;
+    overflow: hidden;
+    padding-right: 1rem;
+  width: 70vw;
+    /* position: absolute; */
+    bottom: 0;
+    right: 0;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+     --max-lines: 1;
+      --line-height: 1.5;
+      height: calc(var(--max-lines) * 1em * var(--line-height));
+      line-height: var(--line-height);
+      position: relative;
+    
 }
 
+.titleContainer{
+
+}
 .title:focus {
     outline: 1px solid rgba(168, 168, 168, .45);
 
@@ -98,6 +152,7 @@ border-radius: 5px;
 
 .list {
     min-height: 40px;
+
 }
 
 .list_item {
@@ -191,8 +246,9 @@ border-radius: 5px;
     opacity: 75%;
     cursor: pointer;
 }
-.add_board_button{
-    background-color: white;
+.add_board_button:hover{
+    background-color: teal;
+    border-radius: 15px;
 
 }
 .add_board_button,.myButton{

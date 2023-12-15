@@ -1,22 +1,118 @@
-.myModal {
+/* .myModal {
     position: fixed;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
     display: none;
-    background: rgba(0, 0, 0, 0.5);
-}
+    background: rgba(0, 0, 0, 1);
+    min-height: 500px;
+} */
 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 1);
+    z-index: 1000; /* Make sure this is higher than the z-index of other elements */
+    display: none;
+  }
+  
+  .overlay.active {
+    display: block;
+  }
+
+.myModal {
+    position: fixed;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(13, 1, 1,0.9);
+    padding: 25px;
+    color: WHITE;
+    border-radius: 16px;
+    min-width: 50vw;
+    /* min-height: 50vh; */
+    z-index: 1001; 
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    transition: 0.5s;
+    opacity: 0.5;
+    font-size: 2rem;
+  }
+/* ///////////////////////////////////////////////////// */
 .myModalContent{
     padding: 25px;
+    color: black;
     background-color: white;
     border-radius: 16px;
-    min-width: 250px;
+    min-width: 50vw;
+    /* min-height: 50vh; */
+    /* z-index: 1001; */
+    transform: scale(0.5);
+    transform: 0.4s all;
+    font-size: 2rem;
+}
+.myModalContent.active{
+  transform: scale(1);
+}
+
+.myModal .myButton{
+  margin: 100px;
+  /* position: absolute; */
 }
 
 .myModal.active {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    opacity: 1;
+    pointer-events: all;
+    font-size: 1.5rem;
+
+    /* opacity: 0; */
 }
+
+.inputModal{
+    min-width: 45vw;
+    min-height: 45vh;
+}
+.textareaModal{
+    /* min-width: 40vw;
+    min-height: 40vh; */
+    
+      resize: none;
+      height: 20vh;
+      border-radius: 5px;
+      border: 1px solid grey;
+      background: white;
+      padding: 10px;
+      width: 100%;
+      min-width: fit-content;
+    min-height: fit-content;
+      outline: none;
+  
+  
+}
+
+.myModal:focus-within {
+    /* Styles for the modal container when it or its children are focused */
+    /* For example, you can add a box shadow to highlight the modal when it's active */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .myModal input,
+  .myModal button {
+    /* Styles for input and button elements inside the modal container */
+    /* These styles will only apply when the modal or its children are focused */
+    border: 1px solid #333;
+    padding: 5px;
+    /* Add any other styles you need */
+  }
